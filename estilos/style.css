@@ -7,8 +7,108 @@
   --destaque-inverso
   --fundo-card
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo-principal: #f0f0f0;
+  --texto: #333333;
+  --texto-inverso: #ffffff;
+  --destaque: #007bff;
+  --destaque-inverso: #ffffff;
+  --fundo-card: #ffffff;
+}
 
 body {
-  background-color: blueviolet;
-  color: aliceblue
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+  background-color: var(--fundo-principal);
+  color: var(--texto);
+}
+
+header {
+  background-color: var(--destaque);
+  color: var(--texto);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+/* Estilo para o menu (ul) */
+nav#menu ul {
+  list-style: none; /* Remove os ícones da lista */
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilo para os itens do menu (a) */
+nav#menu a {
+  text-decoration: none; /* remove o sublinhado dos links */
+  color: var(--texto-inverso);
+  font-weight: 600;
+  padding: 12px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s; /* adiciona uma transição suave para as mudanças de cor */
+}
+
+/* altera o estilo quando o mouse passa por cima dos links (a) */
+nav#menu a:hover {
+  background-color: var(--destaque-inverso);
+  color: var(--destaque);
+}
+
+main {
+  padding: 0 15px;display: grid; 
+  grid-template-columns: auto 90vw auto; /* define três colunas, a do meio com largura de 90% da viewport */
+  gap: 20px;
+  margin-top: 20PX;
+}
+
+section#ficha {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  border-radius: 5px;
+  grid-column: 2; /* o elemento ocupará a segunda coluna */
+}
+
+section#ficha img.foto {
+  width: 200px;
+  aspect-ratio: 1/1; /* mantém a proporção da imagem */
+  object-fit: cover; /* faz com que a imagem cubra todo o espaço disponível */
+  overflow: hidden; /* esconde qualquer parte da imagem que ultrapasse os limites do elemento */
+  border-radius: 50%;
+  border: 5px solid var(--fundo-card);
+  outline: 5px solid var(--destaque);
+  display: block; /* transforma o elemento em um bloco */
+  margin: auto; /* centraliza o elemento horizontalmente */
+  margin-bottom: 15px;
+}
+
+section#ficha h1 {
+  color: var(--destaque);
+  margin: 15px 0;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+div#social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+div#social a {
+  color: var(--destaque);
+  transition: color 0.5s;
+}
+
+div#social a:hover {
+  color: var(--destaque-inverso);
 }
